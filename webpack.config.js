@@ -15,15 +15,15 @@ module.exports = {
         publicPath: '/dist'
     },
     proxy: {
-      '/api' : 'http://localhost:3000',
+      '/main' : 'http://localhost:3000',
     },
   },
-  plugins: [new HtmlWebpackPlugin(
-    {
-    title: 'Development',
+  plugins: [
+    new HtmlWebpackPlugin({
+    title: 'main page',
     template: 'index.html',
-    }
-    )],
+    })
+  ],
   module: {
     rules: [
       {
