@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import img from '../images/DnD_logo.png';
 
 class App extends Component{
   constructor(props) {
@@ -6,10 +7,14 @@ class App extends Component{
   }
   render(){
     return(
-      <div>
+      <div id='login'>
         <h2>User Login</h2>
         <form method="POST" action='/login'>
-          <input></input>
+          <center>
+          <input name='username' placeholder='Username'></input>
+          <input name='password' placeholder='Password'></input>
+          <input type='submit' value='Log In'></input>
+          </center>
         </form>
       </div>
     );
