@@ -10,7 +10,9 @@ class App extends Component{
     this.state = {
       campaigns: [],
       characters: [],
+      filter: [],
     }
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(){
@@ -33,27 +35,18 @@ class App extends Component{
       });
     })
     .catch(err => console.log('Error fetching characters', err)); 
+
+    this.setState({...this.state, filter: []});
   }
 
-  render(){
-    const { campaigns } = this.state;
+  handleClick(e){
+    let filterBy = e.currentTarget.getAttribute('value');
     const { characters } = this.state;
-
-    const campaignList = [];
-    for(let i = 0; i < campaigns.length; i++){
-      campaignList.push(<Campaign
-        key={i}
-        campaign_id={campaigns[i].campaign_id}
-        name={campaigns[i].name}
-        description={campaigns[i].description}
-        recap={campaigns[i].recap}
-      />);
-    }
-
     const characterList = [];
     for(let i = 0; i < characters.length; i++){
       characterList.push(<CharSheets
         key={i}
+        id={characters[i].campaign_id}
         name={characters[i].name}
         race={characters[i].race}
         role={characters[i].role}
@@ -63,6 +56,26 @@ class App extends Component{
         notes={characters[i].notes}
       />);
     }
+    let filter = characterList.filter(char => char.props.id === parseInt(filterBy))
+    this.setState({...this.state, filter: filter});
+  }
+
+  render(){
+    const { campaigns } = this.state;
+    
+
+    const campaignList = [];
+    for(let i = 0; i < campaigns.length; i++){
+      campaignList.push(<Campaign
+        key={i}
+        campaign_id={campaigns[i].campaign_id}
+        name={campaigns[i].name}
+        description={campaigns[i].description}
+        recap={campaigns[i].recap}
+        handleClick={this.handleClick}
+      />);
+    }
+
     // const campaignList = campaigns.map((campaigns, i) => {
     //   return(
     //     <Campaign 
@@ -92,7 +105,7 @@ class App extends Component{
       <center>
         Character List:
         <div className='charBox'>
-        {characterList}
+        {this.state.filter}
         </div>
       </center>
     </div>

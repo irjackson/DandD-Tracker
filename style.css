@@ -50,7 +50,8 @@ h1{
 /* component styles */
 .campBox{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding: 10px;
 }
 
 .campItems{
@@ -63,12 +64,21 @@ h1{
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgb(43, 43, 43);
   padding: 10px;
+  margin-right: 5px;
   word-wrap: normal;
+  transition: .2s;
 }
+.campItems:hover {
+  background-color: rgba(141, 141, 141, 0.318);
+  -webkit-transform: translateY(-1px);
+  transform: scale(1.05,1.05);
+}
+
 
 .charBox{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding: 10px;
 }
 
 .charItems{
@@ -76,10 +86,11 @@ h1{
   flex-direction: column;
   text-align: left;
   justify-content: space-around;
-  width: 250px;
+  width: 300px;
   border: 2px solid rgb(48, 48, 48);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgb(43, 43, 43);
   padding: 10px;
+  margin-right: 5px;
   word-wrap: normal;
 }

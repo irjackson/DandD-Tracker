@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 const Campaign = props => {
   const {campaign_id, name, description, recap} = props;
   return(
-    <div className='campItems'>
+    <div className='campItems' value={campaign_id} onClick={props.handleClick}>
         <ul>
-          <li>#{campaign_id}</li>
+          <p><li>#{campaign_id}</li></p>
           <center>
           <li>{name}</li>
           <li>{description}</li>

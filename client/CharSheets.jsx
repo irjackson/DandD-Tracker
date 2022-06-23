@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 const CharSheets = props => {
-  const { name, race, role, pronouns, charClass, level, notes } = props;
+  const { id, name, race, role, pronouns, charClass, level, notes } = props;
   return(
     <div className='charItems'>
         <ul>
-          <li>{name}</li>
+          <p><li>{name}</li></p>
         <center>
           <strong>Race:</strong>
           <li>{race}</li>
