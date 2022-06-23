@@ -73,5 +73,17 @@ dndController.getCharacters = (req, res, next) => {
     });
 }
 
+dndController.deleteCharacters = (req, res, next) =>{
+  const search = `DELETE FROM characters WHERE character_id = ${req.params['id']}`
+
+  db.query(search)
+    .then(data => {
+      next();
+    })
+    .catch(err => {
+      next('Error occurred in deleteCharacters');
+    })
+}
+
 
 module.exports = dndController;

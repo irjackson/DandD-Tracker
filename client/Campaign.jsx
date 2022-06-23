@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 
-const Campaign = ({ camps }) => {
-  const {campaign_id, name, description, recap} = camps;
+const Campaign = props => {
+  const {campaign_id, name, description, recap} = props;
   return(
     <div className='campItems'>
-      <center>
         <ul>
-          <li>{campaign_id}</li>
+          <li>#{campaign_id}</li>
+          <center>
           <li>{name}</li>
           <li>{description}</li>
-          <li>{recap}</li>
+          </center>
         </ul>
-
-      </center>
+      <p>
+        <strong><u>Recap:</u></strong>
+      </p>
+      {recap}
     </div>
   )
 }

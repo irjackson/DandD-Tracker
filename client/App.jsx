@@ -38,24 +38,48 @@ class App extends Component{
   render(){
     const { campaigns } = this.state;
     const { characters } = this.state;
- 
-    const campaignList = campaigns.map((campaigns, i) => {
-      return(
-        <Campaign 
-        key={i}
-        camps={campaigns}
-        />
-      )
-    })
 
-    const characterList = characters.map((characters, i) =>{
-      return(
-        <CharSheets
+    const campaignList = [];
+    for(let i = 0; i < campaigns.length; i++){
+      campaignList.push(<Campaign
         key={i}
-        chars={characters}
-        />
-      )
-    })
+        campaign_id={campaigns[i].campaign_id}
+        name={campaigns[i].name}
+        description={campaigns[i].description}
+        recap={campaigns[i].recap}
+      />);
+    }
+
+    const characterList = [];
+    for(let i = 0; i < characters.length; i++){
+      characterList.push(<CharSheets
+        key={i}
+        name={characters[i].name}
+        race={characters[i].race}
+        role={characters[i].role}
+        pronouns={characters[i].pronouns}
+        charClass={characters[i].class}
+        level={characters[i].level}
+        notes={characters[i].notes}
+      />);
+    }
+    // const campaignList = campaigns.map((campaigns, i) => {
+    //   return(
+    //     <Campaign 
+    //     key={i}
+    //     camps={campaigns}
+    //     />
+    //   )
+    // })
+
+    // const characterList = characters.map((characters, i) =>{
+    //   return(
+    //     <CharSheets
+    //     key={i}
+    //     chars={characters}
+    //     />
+    //   )
+    // })
 
     return(
     <div>

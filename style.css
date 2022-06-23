@@ -9,6 +9,10 @@ body {
   background-color: rgb(37, 37, 37);
   padding: 20px;
 }
+ul{
+  list-style-type: none;
+  margin-left: -30px;
+}
 /* front page */
 #logo{
   height: 100px;
@@ -44,31 +48,38 @@ h1{
   }
 
 /* component styles */
-.charBox{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: fit-content;
-  border: 2px solid rgb(48, 48, 48);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgb(43, 43, 43);
-  padding: 10px;
-}
-  .charItemsP{
-    word-wrap: normal;
-  }
 .campBox{
   display: flex;
+  justify-content: space-around;
+}
+
+.campItems{
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: fit-content;
+  text-align: left;
+  justify-content: space-around;
+  width: 200px;
   border: 2px solid rgb(48, 48, 48);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgb(43, 43, 43);
   padding: 10px;
+  word-wrap: normal;
 }
-  .campItems{
-    word-wrap: normal;
-  }
+
+.charBox{
+  display: flex;
+  justify-content: space-around;
+}
+
+.charItems{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-around;
+  width: 250px;
+  border: 2px solid rgb(48, 48, 48);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(43, 43, 43);
+  padding: 10px;
+  word-wrap: normal;
+}
