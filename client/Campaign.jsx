@@ -6,15 +6,23 @@ const Campaign = props => {
     <div className='campItems' value={campaign_id} onClick={props.handleClick}>
         <ul>
           <p><li>#{campaign_id}</li></p>
-          <center>
           <li>{name}</li>
+          <hr className='boxHr'/>
+          <center>
+          <p><strong><u>Description:</u></strong></p>
           <li>{description}</li>
+          <hr className='boxHr'/>
           </center>
         </ul>
-      <p>
+      <div className='recap'>
         <strong><u>Recap:</u></strong>
-      </p>
+      </div>
       {recap}
+      <div className='campBtns'>
+       <button >New Character</button> 
+        <button >Update</button>
+        <button>Delete</button>
+      </div>
     </div>
   )
 }

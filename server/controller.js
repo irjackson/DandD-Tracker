@@ -17,7 +17,7 @@ dndController.getCampaigns = (req, res, next) => {
 };
 
 dndController.addCampaign = (req, res, next) =>{
-  const {campaign_id, name, description, recap} = req.body;
+  const { campaign_id, name, description, recap } = req.body;
   const search = `INSERT INTO campaigns (name, description, recap)
   VALUES(
     '${name}', '${description}', '${recap}')
@@ -25,7 +25,7 @@ dndController.addCampaign = (req, res, next) =>{
 
   db.query(search)
     .then(data =>{
-      console.log(`Campaign added: `, data.rows)
+      console.log(`Campaign added`)
       next();
     })
     .catch(err => {
@@ -34,13 +34,13 @@ dndController.addCampaign = (req, res, next) =>{
 }
 
 dndController.updateCampaign = (req, res, next) => {
-  const {campaign_id, name, description, recap} = req.body;
+  const { campaign_id, name, description, recap } = req.body;
   const search = `UPDATE campaigns SET name = '${name}', description = '${description}', recap = '${recap}' WHERE campaign_id = ${req.params['id']}
   RETURNING *;`
 
   db.query(search)
   .then(data =>{
-    console.log(`Campaign updated: `, data.rows)
+    console.log(`Campaign updated`)
     next();
   })
   .catch(err => {
@@ -71,6 +71,31 @@ dndController.getCharacters = (req, res, next) => {
     .catch(error => {
       next('No results');
     });
+}
+
+dndController.addCharacter = (req, res, next) =>{
+  const { campaign_id, name, race, role, pronouns, level, notes } = req.body;
+  const search = `INSERT INTO characters (
+    campaign_id,
+    name,
+    role,
+    pronouns,
+    class,
+    level,
+    notes,
+    race
+    )
+    VALUES
+    (${campaign_id}, '${name}', '${role}', '${pronouns}', '${req.body.class}', ${level}, '${notes}', '${race}')`;
+
+  db.query(search)
+    .then(data =>{
+      console.log(`Character added`)
+      next();
+    })
+    .catch(err => {
+      next('Error occurred in addCharacter');
+    })
 }
 
 dndController.deleteCharacters = (req, res, next) =>{

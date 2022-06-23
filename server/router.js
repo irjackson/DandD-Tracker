@@ -24,6 +24,10 @@ router.get('/char', dndController.getCharacters, (req, res) =>{
   return res.status(200).json(res.locals.characters);
 })
 
+router.post('/char', dndController.addCharacter, (req, res) =>{
+  return res.status(200).send('Character added successfully');
+})
+
 router.delete('/char/:id', dndController.deleteCharacters, (req, res) => {
   return res.status(200).send('Character deleted successfully')
 })

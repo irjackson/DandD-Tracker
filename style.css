@@ -9,6 +9,21 @@ body {
   background-color: rgb(37, 37, 37);
   padding: 20px;
 }
+
+.topHr{
+  border: none;
+  background-color: rgba(117, 117, 117, 0.295);
+  height: 4px;
+  border-radius: 200px
+}
+
+.boxHr{
+  border: none;
+  background-color: rgba(117, 117, 117, 0.295);
+  height: 4px;
+  border-radius: 200px
+}
+
 ul{
   list-style-type: none;
   margin-left: -30px;
@@ -47,50 +62,115 @@ h1{
     width: 100px;
   }
 
+.campCreate{
+  background:rgba(141, 141, 141, 0.318);
+  color:rgb(236, 236, 236);
+  border: 1px solid gray;
+  margin-top: 10px;
+}
+
+.campCreate:hover {
+  background-color: rgba(141, 141, 141, 0.318);
+  -webkit-transform: translateY(-2px);
+  transform: scale(1.03,1.03);
+}
+
 /* component styles */
+
+/* campaigns */
 .campBox{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 10px;
 }
 
-.campItems{
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  justify-content: space-around;
-  width: 200px;
-  border: 2px solid rgb(48, 48, 48);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgb(43, 43, 43);
-  padding: 10px;
-  margin-right: 5px;
-  word-wrap: normal;
-  transition: .2s;
-}
-.campItems:hover {
-  background-color: rgba(141, 141, 141, 0.318);
-  -webkit-transform: translateY(-1px);
-  transform: scale(1.05,1.05);
-}
+  .campItems{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-around;
+    width: 230px;
+    border: 2px solid rgb(48, 48, 48);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(43, 43, 43);
+    padding: 10px;
+    margin-right: 5px;
+    word-wrap: normal;
+    transition: .2s;
+  }
+  .campItems:hover {
+    background-color: rgba(141, 141, 141, 0.318);
+    -webkit-transform: translateY(-1px);
+    transform: scale(1.05,1.05);
+  }
 
+  .campItems ul{
+    margin-top: -10px;
+    margin-bottom: -2px;
+  }
 
+  .charItems .recap{
+    margin-top: -10px;
+    margin-bottom: 50px;
+  }
+
+  .campBtns button{
+    background:rgba(141, 141, 141, 0.318);
+    color:rgb(236, 236, 236);
+    border: 1px solid gray;
+    margin-top: 10px;
+    margin-right: 3px;
+  }
+
+  .campBtns button:hover {
+    background-color: rgba(141, 141, 141, 0.318);
+    -webkit-transform: translateY(-2px);
+    transform: scale(1.08,1.08);
+  }
+
+/* characters */
 .charBox{
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
+  flex-wrap:wrap
 }
 
-.charItems{
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  justify-content: space-around;
-  width: 300px;
-  border: 2px solid rgb(48, 48, 48);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgb(43, 43, 43);
-  padding: 10px;
-  margin-right: 5px;
-  word-wrap: normal;
-}
+  .charItems{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-around;
+    width: 300px;
+    border: 2px solid rgb(48, 48, 48);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(43, 43, 43);
+    padding: 10px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    word-wrap: normal;
+  }
+
+  .charItems ul{
+    margin-top: -10px;
+    margin-bottom: -2px;
+  }
+
+  .charItems #notes{
+    margin-top: -10px;
+    margin-bottom: 5px;
+  }
+
+  .charBtns button{
+    background:rgba(141, 141, 141, 0.318);
+    color:rgb(236, 236, 236);
+    border: 1px solid gray;
+    margin-top: 10px;
+    margin-right: 3px;
+  }
+
+  .charBtns button:hover {
+    background-color: rgba(141, 141, 141, 0.318);
+    -webkit-transform: translateY(-2px);
+    transform: scale(1.08,1.08);
+  }

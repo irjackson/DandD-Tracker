@@ -1,26 +1,45 @@
 import React, { Component } from 'react';
 
 const CharSheets = props => {
-  const { id, name, race, role, pronouns, charClass, level, notes } = props;
+  const { charId, id, name, race, role, pronouns, charClass, level, notes } = props;
+
+  const deleteChar = async () => {
+    console.log(charId);
+    fetch(`/main/char/${charId}`, {
+      method: 'DELETE',
+    })
+    .then(resp => resp.json())
+    .then((data) => {
+      console.log(data);
+      
+    })
+    setTimeout(() => window.location.reload(), 300)
+  }
   return(
-    <div className='charItems'>
+    <div className='charItems' value={charId}>
         <ul>
-          <p><li>{name}</li></p>
+          <strong><p><li>{name}</li><li style={{ textAlign: 'right' }}>id: {charId}</li></p></strong>
         <center>
-          <strong>Race:</strong>
+        <hr className='boxHr'/>
+          <strong><u>Race:</u></strong>
           <li>{race}</li>
-          <strong>Pronouns:</strong>
+          <strong><u>Pronouns:</u></strong>
           <li>{pronouns}</li>
-          <strong>Role:</strong>
+          <strong><u>Role:</u></strong>
           <li>{role}</li>
-          <strong>Class:</strong>
+          <strong><u>Class:</u></strong>
           <li>Level {level} {charClass}</li>
+        <hr className='boxHr'/>
         </center>
         </ul>
-      <p>
+      <div className='notes'>
         <strong><u>Notes:</u></strong>
-      </p>
+      </div>
         {notes}
+        <div className='charBtns'>
+        <button >Update</button>
+          <button onClick={() => deleteChar(charId)}>Delete</button>
+      </div>
     </div>
   )
 }

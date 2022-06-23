@@ -46,6 +46,7 @@ class App extends Component{
     for(let i = 0; i < characters.length; i++){
       characterList.push(<CharSheets
         key={i}
+        charId={characters[i].character_id}
         id={characters[i].campaign_id}
         name={characters[i].name}
         race={characters[i].race}
@@ -63,7 +64,6 @@ class App extends Component{
   render(){
     const { campaigns } = this.state;
     
-
     const campaignList = [];
     for(let i = 0; i < campaigns.length; i++){
       campaignList.push(<Campaign
@@ -76,27 +76,10 @@ class App extends Component{
       />);
     }
 
-    // const campaignList = campaigns.map((campaigns, i) => {
-    //   return(
-    //     <Campaign 
-    //     key={i}
-    //     camps={campaigns}
-    //     />
-    //   )
-    // })
-
-    // const characterList = characters.map((characters, i) =>{
-    //   return(
-    //     <CharSheets
-    //     key={i}
-    //     chars={characters}
-    //     />
-    //   )
-    // })
-
     return(
     <div>
       <center>
+      <button className='campCreate'>New Campaign</button><br/><br/>
         Campaigns:
         <div className='campBox'>
           {campaignList}
