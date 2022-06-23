@@ -18,7 +18,13 @@ const CharSheets = props => {
   return(
     <div className='charItems' value={charId}>
         <ul>
-          <strong><p><li>{name}</li><li style={{ textAlign: 'right' }}>id: {charId}</li></p></strong>
+          <strong>
+            <p>
+              <li><strong><u>Name:</u></strong></li>
+              <li>{name}</li>
+              <li style={{ textAlign: 'right' }}>id: {charId}</li>
+            </p>
+          </strong>
         <center>
         <hr className='boxHr'/>
           <strong><u>Race:</u></strong>

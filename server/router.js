@@ -32,6 +32,4 @@ router.delete('/char/:id', dndController.deleteCharacters, (req, res) => {
   return res.status(200).send('Character deleted successfully')
 })
 
-
-
 module.exports = router;

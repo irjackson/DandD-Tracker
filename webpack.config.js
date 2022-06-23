@@ -20,9 +20,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-    title: 'main page',
-    template: 'index.html',
-    })
+      title: 'main page',
+      template: 'index.html',
+    }),
   ],
   module: {
     rules: [

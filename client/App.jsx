@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import img from '../images/DnD_logo.png'
+import img from '../images/DnD_logo.png';
+import { Link } from 'react-router-dom';
 
 import Campaign from './Campaign.jsx';
 import CharSheets from './CharSheets.jsx';
@@ -76,17 +77,17 @@ class App extends Component{
       />);
     }
 
-    return(
+  return(
     <div>
       <center>
-      <button className='campCreate'>New Campaign</button><br/><br/>
-        Campaigns:
+      <a href='/campCreate'><button className='campCreate'>New Campaign</button></a><br/><br/>
+        Campaigns {`(${this.state.campaigns.length} in database)`}:
         <div className='campBox'>
           {campaignList}
         </div>
       </center>
       <center>
-        Character List:
+        Character List {`(${this.state.characters.length} in database)`}:
         <div className='charBox'>
         {this.state.filter}
         </div>

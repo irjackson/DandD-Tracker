@@ -14,6 +14,7 @@ body {
   border: none;
   background-color: rgba(117, 117, 117, 0.295);
   height: 4px;
+  width: 50vw;
   border-radius: 200px
 }
 
@@ -45,6 +46,7 @@ h1{
   align-items: center;
   justify-content: flex-start;
   width: 250px;
+  background-color: rgb(29, 29, 29);
   border: 2px solid rgb(48, 48, 48);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgb(43, 43, 43);
@@ -56,10 +58,17 @@ h1{
     background-color:rgb(48, 48, 48);
     margin-right: 5px;
     margin-top: 5px;
+    transition: .1s;
   }
   #login input[type=submit]{
     height: 35px;
     width: 100px;
+  }
+
+  #login input:hover{
+    background-color: rgba(141, 141, 141, 0.318);
+    -webkit-transform: translateY(-2px);
+    transform: scale(1.10,1.10);
   }
 
 .campCreate{
@@ -67,12 +76,13 @@ h1{
   color:rgb(236, 236, 236);
   border: 1px solid gray;
   margin-top: 10px;
+  transition: .2s;
 }
 
 .campCreate:hover {
   background-color: rgba(141, 141, 141, 0.318);
   -webkit-transform: translateY(-2px);
-  transform: scale(1.03,1.03);
+  transform: scale(1.10,1.10);
 }
 
 /* component styles */
@@ -89,7 +99,9 @@ h1{
     flex-direction: column;
     text-align: left;
     justify-content: space-around;
-    width: 230px;
+    width: 300px;
+    max-height: fit-content;
+    background-color: rgb(29, 29, 29);
     border: 2px solid rgb(48, 48, 48);
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgb(43, 43, 43);
@@ -99,7 +111,7 @@ h1{
     transition: .2s;
   }
   .campItems:hover {
-    background-color: rgba(141, 141, 141, 0.318);
+    background-color: rgba(0, 0, 0, 0.369);
     -webkit-transform: translateY(-1px);
     transform: scale(1.05,1.05);
   }
@@ -120,6 +132,7 @@ h1{
     border: 1px solid gray;
     margin-top: 10px;
     margin-right: 3px;
+    transition: .2s;
   }
 
   .campBtns button:hover {
@@ -131,9 +144,10 @@ h1{
 /* characters */
 .charBox{
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: center;
   padding: 10px;
-  flex-wrap:wrap
+  flex-wrap: wrap;
 }
 
   .charItems{
@@ -142,6 +156,7 @@ h1{
     text-align: left;
     justify-content: space-around;
     width: 300px;
+    background-color: rgb(29, 29, 29);
     border: 2px solid rgb(48, 48, 48);
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgb(43, 43, 43);
@@ -150,7 +165,7 @@ h1{
     margin-bottom: 15px;
     word-wrap: normal;
   }
-
+  
   .charItems ul{
     margin-top: -10px;
     margin-bottom: -2px;
@@ -167,10 +182,11 @@ h1{
     border: 1px solid gray;
     margin-top: 10px;
     margin-right: 3px;
+    transition: .2s;
   }
 
   .charBtns button:hover {
     background-color: rgba(141, 141, 141, 0.318);
     -webkit-transform: translateY(-2px);
-    transform: scale(1.08,1.08);
+    transform: scale(1.10,1.10);
   }
