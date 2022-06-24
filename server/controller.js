@@ -35,8 +35,7 @@ dndController.addCampaign = (req, res, next) =>{
 
 dndController.updateCampaign = (req, res, next) => {
   const { campaign_id, name, description, recap } = req.body;
-  const search = `UPDATE campaigns SET name = '${name}', description = '${description}', recap = '${recap}' WHERE campaign_id = ${req.params['id']}
-  RETURNING *;`
+  const search = `UPDATE campaigns SET name = '${name}', description = '${description}', recap = '${recap}' WHERE campaign_id = ${req.params['id']}`;
 
   db.query(search)
   .then(data =>{
@@ -44,7 +43,7 @@ dndController.updateCampaign = (req, res, next) => {
     next();
   })
   .catch(err => {
-    next('Error occurred in addCampaign');
+    next('Error occurred in updateCampaign');
   })
 }
 

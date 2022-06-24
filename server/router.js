@@ -11,7 +11,7 @@ router.post('/', dndController.addCampaign, (req, res) =>{
   return res.status(200).send('Campaign added successfully');
 })
 
-router.patch('/:id', dndController.updateCampaign, (req, res) =>{
+router.put('/:id', dndController.updateCampaign, (req, res) =>{
   return res.status(200).send('Campaign updated successfully')
 })
 
